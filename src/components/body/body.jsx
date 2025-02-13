@@ -1,0 +1,19 @@
+import "./body.scss";
+
+
+function Body() {
+  return (
+    <section className="main">
+      <div className="main__content">
+        <p className="main__header">Our mission:</p>
+        <p className="main__details">
+          Provide photographers a space to share photos of the neighborhoods
+          they cherish,
+          <i className="main__emphasis"> expressed in their unique style.</i>
+        </p>
+      </div>
+    </section>
+  );
+}
+
+export default Body;

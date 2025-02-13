@@ -1,0 +1,50 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/font" as *;
+
+.card {
+    background-color: $border-color; 
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 300px;
+    margin: 16px 0px;
+    position: relative;
+    overflow-x: hidden;
+
+    &__image {
+        object-fit: cover;
+        border-radius: 5px 5px 0px 0px;
+      }
+      
+      &__info {
+        color: $primary-text;
+        padding: 8px;
+        background: $border-color;
+        border-radius: 8px 0px 0px 0px;
+        position: absolute;
+        margin-top: 58%;
+        margin-left: 56.5%;
+        z-index: 1;
+        flex: 1;
+      }
+      
+      &__tags {
+        color: $primary-text;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 8px;
+      }
+
+      &__tag {
+        font-size: 16px;
+        padding: 10px;
+        background:$primary-bg;
+      }
+
+  }
+  
+ 

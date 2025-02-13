@@ -1,0 +1,36 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/font" as *;
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/mixin" as *;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0px;
+
+  &__name {
+    
+  }
+
+  &__filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    border: 2px solid $primary-accent;
+    padding: 8px 16px;
+    border-radius: 30px 30px 30px 30px;
+    margin-top: 10px;
+    color: $alt-text;
+    background: $primary-accent;
+
+    @include tablet {
+      padding: 11px 22px;
+    }
+  }
+
+  &__icon {
+    color: $alt-text;
+  }
+}

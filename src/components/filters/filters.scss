@@ -1,0 +1,18 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/font" as *;
+
+
+.filter {
+    background: $alt-bg; 
+
+    &__header {
+
+    }
+
+    &__list {
+        display: flex;
+        gap: 2px;
+        flex-wrap: wrap;
+    }
+}

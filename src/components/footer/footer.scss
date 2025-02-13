@@ -1,0 +1,77 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/font" as *;
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/mixin" as *;
+
+
+.footer {
+
+  &__content {
+
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      align-items:baseline;
+    }
+
+    @include desktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+  }
+
+  &__links {
+
+    @include tablet {
+      display:flex;
+      gap: 60px;
+    }
+  }
+
+  &__link {
+
+    @include desktop {
+      align-self: center;
+    }
+  }
+
+  &__header {
+    margin: 20px 0px;
+  }
+
+  &__column {
+    margin: 30px 0px;
+  }
+
+  &__social {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0px;
+    display: none;
+
+    @include tablet {
+      display: none;
+    }
+
+    @include desktop {
+      display:flex;
+      margin-top: 30px;
+    }
+  }
+
+  &__social2 {
+    display: flex;
+    gap: 20px;
+    padding: 20px 0px;
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__copyright {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+}

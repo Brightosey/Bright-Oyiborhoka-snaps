@@ -1,0 +1,78 @@
+@use "./variables" as *;
+@use "./mixin" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "newsreader" sans-serif;
+  background: $primary-bg;
+  padding: 0px 16px;
+
+  @include tablet {
+    padding: 0px 24px;
+  }
+
+  @include desktop {
+    margin: 0px auto;
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+// TEXT STYLE FOR MOBILE
+h1,
+h2 {
+  font-size: 26px;
+  line-height: 38px;
+  font-weight: 300;
+}
+h3 {
+  font-size: 18px;
+  line-height: 23px;
+  font-weight: 500;
+}
+p {
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: 500;
+}
+
+label,
+button {
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: 500;
+}
+
+//TEXT SYLE FOR TABLET & DESKTOP
+h1,
+h2 {
+  font-size: 52px;
+  line-height: 66px;
+  font-weight: 300;
+}
+h3 {
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 500;
+}
+p {
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 500;
+}
+
+label,
+button {
+  font-size: 14px;
+  line-height: 17.5px;
+  font-weight: 500;
+}

@@ -7,7 +7,7 @@ function Filter() {
         <h3 className="filter__header">Filters</h3>
         <div className="filter__list">
           {Data.map((item, index) => {
-            return <p key={index}>{item}</p>;
+            return <p className="filter__item" key={index}>{item}</p>;
           })}
         </div>
       </section>

@@ -6,14 +6,17 @@ function Body() {
     <section className="main">
       <div className="main__content">
         <p className="main__header">Our mission:</p>
-        <p className="main__details">
-          Provide photographers a space to share photos of the neighborhoods
-          they cherish,
-          <i className="main__emphasis"> expressed in their unique style.</i>
-        </p>
+        <section className="main__description">
+          <p className="main__details">
+            Provide photographers a space to share photos of the neighborhoods
+            they cherish,
+            <i className="main__emphasis"> expressed in their unique style.</i>
+          </p>
+        </section>
       </div>
     </section>
   );
 }
+
 
 export default Body;

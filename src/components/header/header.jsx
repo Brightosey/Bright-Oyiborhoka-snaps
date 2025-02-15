@@ -6,7 +6,7 @@ function Header() {
     <section className="header">
       <h1 className="header__name">Snaps</h1>
       <button className="header__filter">
-        Filters{" "}
+        Filters
         <svg
           className="header__icon"
           width="15"

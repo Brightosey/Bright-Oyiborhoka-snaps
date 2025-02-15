@@ -1,14 +1,36 @@
 @use "../../styles/partials/global" as *;
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/font" as *;
+@use "../../styles/partials/mixin" as *;
 
 .main {
 
     &__content {
-       padding: 30px 0px; 
+       padding: 30px 16px; 
+    }
+
+    &__header {
+      padding-bottom: 30px;
+    }
+
+    &__description {
+      @include desktop {
+        max-width: 85%;
+      }
     }
 
     &__details {
-      font-size: 30px;
+
+      @include tablet {
+        font-size: 38px;
+        font-weight:100;
+        line-height: 50px;
+      }
+
+      @include desktop {
+        font-size: 50px;
+        line-height: 60px;
+      }
+      
     }
   }

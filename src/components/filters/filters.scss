@@ -1,18 +1,42 @@
 @use "../../styles/partials/global" as *;
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/font" as *;
+@use "../../styles/partials/mixin" as *;
 
 
 .filter {
     background: $alt-bg; 
+    padding: 20px 0px 20px 16px;
+
+    @include tablet {
+        padding: 20px 24px 80px 24px;
+      }
 
     &__header {
+        padding-bottom: 10px;
+
+        @include tablet {
+            padding-bottom: 30px;
+        }
 
     }
 
     &__list {
         display: flex;
-        gap: 2px;
+        gap: 8px;
         flex-wrap: wrap;
+    }
+
+    &__item {
+        padding: 0px 7px;
+        border: 2px solid $primary-accent;
+        border-radius: 8px;
+        background: white;
+        color: $primary-accent;
+        font-size: 12px;
+
+        @include tablet {
+            padding: 0px 15px;
+        }
     }
 }

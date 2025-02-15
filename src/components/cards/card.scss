@@ -1,50 +1,60 @@
 @use "../../styles/partials/global" as *;
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/font" as *;
+@use "../../styles/partials/mixin" as *;
 
 .card {
-    background-color: $border-color; 
-    border-radius: 5px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 300px;
-    margin: 16px 0px;
-    position: relative;
-    overflow-x: hidden;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  max-width: 100%;
+  background-color: $alt-bg;
 
-    &__image {
-        object-fit: cover;
-        border-radius: 5px 5px 0px 0px;
-      }
-      
-      &__info {
-        color: $primary-text;
-        padding: 8px;
-        background: $border-color;
-        border-radius: 8px 0px 0px 0px;
-        position: absolute;
-        margin-top: 58%;
-        margin-left: 56.5%;
-        z-index: 1;
-        flex: 1;
-      }
-      
-      &__tags {
-        color: $primary-text;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        padding: 8px;
-      }
 
-      &__tag {
-        font-size: 16px;
-        padding: 10px;
-        background:$primary-bg;
-      }
-
+  @include tablet {
+    width: 48.5%;
   }
-  
- 
+
+  &__image-container {
+    position: relative;
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+  }
+
+  &__info {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    border-top-left-radius: 8px;
+    border: 1px solid $alt-bg;
+    font-weight: bold;
+    padding: 4px;
+    background: $alt-bg;
+    
+  }
+
+  &__photographer {
+    font-size: 12px;
+  }
+
+  &__tags {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 8px;
+  }
+
+  &__tag {
+    background-color: white;
+    color: $primary-text;
+    padding:0px 7px;
+    border: 1px solid $primary-accent;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+}

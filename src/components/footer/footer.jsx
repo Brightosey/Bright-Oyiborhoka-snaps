@@ -4,10 +4,13 @@ import twitterIcon from "../../assets/Icons/X_twitter.svg";
 import instagramIcon from "../../assets/Icons/Instagram.svg";
 import pinterestIcon from "../../assets/Icons/Pinterest.svg";
 
+const currentDate = new Date();
+const year = currentDate.getFullYear();
+
 function Footer() {
   return (
-    <>
-      <section className="footer">
+    <section className="footer">
+      <section className="footer__wrapper">
         <section className="footer__content">
           <h3 className="footer__header">Snaps</h3>
           <section className="footer__links">
@@ -55,39 +58,35 @@ function Footer() {
         </section>
       </section>
       <article className="footer__social2">
-              <a href="" target="_blank" className="footer__social-link">
-                <img
-                  src={facebookIcon}
-                  alt="facebook icon"
-                  className="footer__icon"
-                />
-              </a>
-              <a href="" target="_blank" className="footer__social-link">
-                <img
-                  src={twitterIcon}
-                  alt="twitter icon"
-                  className="footer__icon"
-                />
-              </a>
-              <a href="" target="_blank" className="footer__social-link">
-                <img
-                  src={instagramIcon}
-                  alt="instagram icon"
-                  className="footer__icon"
-                />
-              </a>
-              <a href="" target="_blank" className="footer__social-link">
-                <img
-                  src={pinterestIcon}
-                  alt="pinterest icon"
-                  className="footer__icon"
-                />
-              </a>
-            </article>
+        <a href="" target="_blank" className="footer__social-link">
+          <img
+            src={facebookIcon}
+            alt="facebook icon"
+            className="footer__icon"
+          />
+        </a>
+        <a href="" target="_blank" className="footer__social-link">
+          <img src={twitterIcon} alt="twitter icon" className="footer__icon" />
+        </a>
+        <a href="" target="_blank" className="footer__social-link">
+          <img
+            src={instagramIcon}
+            alt="instagram icon"
+            className="footer__icon"
+          />
+        </a>
+        <a href="" target="_blank" className="footer__social-link">
+          <img
+            src={pinterestIcon}
+            alt="pinterest icon"
+            className="footer__icon"
+          />
+        </a>
+      </article>
       <p className="footer__copyright">
-        &copy; 2024 Snaps . Terms Privacy Cookies
+        &copy; {year} Snaps . Terms Privacy Cookies
       </p>
-    </>
+    </section>
   );
 }
 

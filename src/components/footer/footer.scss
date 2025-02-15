@@ -5,6 +5,7 @@
 
 
 .footer {
+  padding: 0px 16px;
 
   &__content {
 
@@ -26,6 +27,7 @@
     @include tablet {
       display:flex;
       gap: 60px;
+      padding-right: 30px;
     }
   }
 
@@ -37,7 +39,8 @@
   }
 
   &__header {
-    margin: 20px 0px;
+   padding-top: 80px;
+   padding-bottom: 20px;
   }
 
   &__column {
@@ -71,7 +74,9 @@
   }
 
   &__copyright {
-    font-size: 16px;
+    font-size: 12px;
     margin-bottom: 15px;
+    color:$border-color ;
+    word-spacing: 7px;
   }
 }

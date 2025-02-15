@@ -10,6 +10,7 @@
 
     @include tablet {
         padding: 20px 24px 80px 24px;
+        min-height: 100%;
       }
 
     &__header {
@@ -34,6 +35,11 @@
         background: white;
         color: $primary-accent;
         font-size: 12px;
+
+        &:hover {
+            background: $primary-accent;
+            color: $primary-bg;
+        }
 
         @include tablet {
             padding: 0px 15px;

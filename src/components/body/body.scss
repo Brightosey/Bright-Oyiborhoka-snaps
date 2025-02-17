@@ -6,11 +6,11 @@
 .main {
 
     &__content {
-       padding: 30px 16px; 
+       padding: 1.875rem 1rem; 
     }
 
     &__header {
-      padding-bottom: 30px;
+      padding-bottom: 1.875rem;
     }
 
     &__description {
@@ -22,14 +22,14 @@
     &__details {
 
       @include tablet {
-        font-size: 38px;
+        font-size: 2.375rem;
         font-weight:100;
-        line-height: 50px;
+        line-height: 3.125rem;
       }
 
       @include desktop {
-        font-size: 50px;
-        line-height: 60px;
+        font-size: 3.125rem;
+        line-height: 3.75rem;
       }
       
     }

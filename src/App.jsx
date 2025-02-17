@@ -7,45 +7,47 @@ import Data from "./Data/photos.json";
 import "./App.scss";
 import React, { useState } from "react";
 
-/* function createCard(item) {
-  return (
-    <Card
-      photo={item.photo}
-      photographer={item.photographer}
-      tags={item.tags}
-      key={item.id}
-    />
-  );
-} */
 
 function App() {
   const [showFilter, setShowFilter] = useState(false);
+  const [selectedPlace, setSelectedPlace] = useState("");
 
   function clickFilter() {
     setShowFilter((prev) => !prev);
   }
 
+  function handleFilteredPlace(item) {
+    setSelectedPlace(item);
+  }
+
+  const filteredCards = selectedPlace
+    ? Data.filter((item) => item.tags.includes(selectedPlace))
+    : Data;
+
   return (
     <>
       <div>
         <Header clickFilter={clickFilter} />
-      {showFilter && <Filter />}
       </div>
       <section className="app__main">
-        {/* <section className="app__filter">
-          <Filter />
-        </section> */}
+        {showFilter && (
+          <section className="app__filter">
+            <Filter handleFilteredPlace={handleFilteredPlace} />
+          </section>
+        )}
         <section className="app__content">
           <Body />
           <section className="card__container">
-            {Data.map((item) => (
-              <Card
-                photo={item.photo}
-                photographer={item.photographer}
-                tags={item.tags}
-                key={item.id}
-              />
-          ))}
+            {filteredCards.map((item) => {
+              return (
+                <Card
+                  photo={item.photo}
+                  photographer={item.photographer}
+                  tags={item.tags}
+                  key={item.id}
+                />
+              );
+            })}
           </section>
         </section>
       </section>

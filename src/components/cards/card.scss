@@ -4,8 +4,8 @@
 @use "../../styles/partials/mixin" as *;
 
 .card {
-  border: 1px solid #ccc;
-  border-radius: 10px;
+  border: .0625rem solid #ccc;
+  border-radius: .625rem;
   max-width: 100%;
   background-color: $alt-bg;
 
@@ -21,40 +21,40 @@
   &__image {
     width: 100%;
     height: auto;
-    border-radius: 10px 10px 0 0;
+    border-radius: .625rem .625rem 0 0;
   }
 
   &__info {
     position: absolute;
-    right: 0px;
-    bottom: 0px;
-    border-top-left-radius: 8px;
-    border: 1px solid $alt-bg;
+    right: 0rem;
+    bottom: 0rem;
+    border-top-left-radius: .5rem;
+    border: .0625rem solid $alt-bg;
     font-weight: bold;
-    padding: 4px;
+    padding: .25rem;
     background: $alt-bg;
     
   }
 
   &__photographer {
-    font-size: 12px;
+    font-size: .75rem;
   }
 
   &__tags {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: .5rem;
     flex-wrap: wrap;
-    margin: 8px;
+    margin: .5rem;
   }
 
   &__tag {
     background-color: white;
     color: $primary-text;
-    padding:0px 7px;
-    border: 1px solid $primary-accent;
-    border-radius: 8px;
-    font-size: 12px;
+    padding:0rem .4375rem;
+    border: .0625rem solid $primary-accent;
+    border-radius: .5rem;
+    font-size: .75rem;
     font-weight: 500;
   }
 }

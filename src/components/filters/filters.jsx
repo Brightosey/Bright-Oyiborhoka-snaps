@@ -2,7 +2,7 @@ import "../filters/filters.scss";
 import Data from "../../Data/tags.json";
 import React, { useState } from "react";
 
-function Filter() {
+function Filter({handleFilteredPlace}) {
   const [isMousedOver, setMouseOver] = useState(false);
 
   function handleMouseOver() {
@@ -25,6 +25,7 @@ function Filter() {
               key={index}
               onMouseOver={handleMouseOver}
               onMouseOut={handleMouseOut}
+              onClick={() => handleFilteredPlace(item)}
               >
                 {item}
               </p>

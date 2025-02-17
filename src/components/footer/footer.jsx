@@ -58,24 +58,24 @@ function Footer() {
         </section>
       </section>
       <article className="footer__social2">
-        <a href="" target="_blank" className="footer__social-link">
+        <a href="https://www.facebook.com" target="_blank" className="footer__social-link">
           <img
             src={facebookIcon}
             alt="facebook icon"
             className="footer__icon"
           />
         </a>
-        <a href="" target="_blank" className="footer__social-link">
+        <a href="https://twitter.com" target="_blank" className="footer__social-link">
           <img src={twitterIcon} alt="twitter icon" className="footer__icon" />
         </a>
-        <a href="" target="_blank" className="footer__social-link">
+        <a href="https://www.instagram.com" target="_blank" className="footer__social-link">
           <img
             src={instagramIcon}
             alt="instagram icon"
             className="footer__icon"
           />
         </a>
-        <a href="" target="_blank" className="footer__social-link">
+        <a href="https://www.pinterest.com" target="_blank" className="footer__social-link">
           <img
             src={pinterestIcon}
             alt="pinterest icon"

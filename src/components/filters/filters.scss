@@ -6,35 +6,35 @@
 
 .filter {
     background: $alt-bg; 
-    padding: 20px 0px 20px 16px;
+    padding: 1.25rem 0rem 1.25rem 1rem;
 
     @include tablet {
-        padding: 20px 24px 80px 24px;
+        padding: 1.25rem 1.5rem 5rem 1.5rem;
         min-height: 100%;
       }
 
     &__header {
-        padding-bottom: 10px;
+        padding-bottom: .625rem;
 
         @include tablet {
-            padding-bottom: 30px;
+            padding-bottom: 1.875rem;
         }
 
     }
 
     &__list {
         display: flex;
-        gap: 8px;
+        gap: .5rem;
         flex-wrap: wrap;
     }
 
     &__item {
-        padding: 0px 7px;
-        border: 2px solid $primary-accent;
-        border-radius: 8px;
+        padding: 0rem .4375rem;
+        border: .125rem solid $primary-accent;
+        border-radius: .5rem;
         background: white;
         color: $primary-accent;
-        font-size: 12px;
+        font-size: .75rem;
         cursor: pointer;
 
         &:hover {
@@ -43,7 +43,7 @@
         }
 
         @include tablet {
-            padding: 0px 15px;
+            padding: 0rem .9375rem;
         }
     }
 }

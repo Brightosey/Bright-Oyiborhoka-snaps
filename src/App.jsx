@@ -5,8 +5,9 @@ import Body from "./components/body/body";
 import Card from "./components/cards/card";
 import Data from "./Data/photos.json";
 import "./App.scss";
+import React, { useState } from "react";
 
-function createCard(item) {
+/* function createCard(item) {
   return (
     <Card
       photo={item.photo}
@@ -15,20 +16,36 @@ function createCard(item) {
       key={item.id}
     />
   );
-}
+} */
 
 function App() {
+  const [showFilter, setShowFilter] = useState(false);
+
+  function clickFilter() {
+    setShowFilter((prev) => !prev);
+  }
+
   return (
     <>
-      <Header />
+      <div>
+        <Header clickFilter={clickFilter} />
+      {showFilter && <Filter />}
+      </div>
       <section className="app__main">
-        <section className="app__filter">
+        {/* <section className="app__filter">
           <Filter />
-        </section>
+        </section> */}
         <section className="app__content">
           <Body />
           <section className="card__container">
-            {Data.map(createCard)}
+            {Data.map((item) => (
+              <Card
+                photo={item.photo}
+                photographer={item.photographer}
+                tags={item.tags}
+                key={item.id}
+              />
+          ))}
           </section>
         </section>
       </section>
@@ -36,6 +53,5 @@ function App() {
     </>
   );
 }
-
 
 export default App;

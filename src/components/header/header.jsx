@@ -1,8 +1,7 @@
 import "../header/header.scss";
-import filterIcon from "../../assets/Icons/Filter.svg";
 import React, { useState } from "react";
 
-function Header() {
+function Header({ clickFilter }) {
   const [isMousedOver, setMouseOver] = useState(false);
 
   function handleMouseOver() {
@@ -19,7 +18,8 @@ function Header() {
       <button
         className="header__filter"
         onMouseOver={handleMouseOver}
-        onMouseOut={handleMouseOut} 
+        onMouseOut={handleMouseOut}
+        onClick={clickFilter}
       >
         Filters
         <svg
@@ -40,4 +40,3 @@ function Header() {
 }
 
 export default Header;
-

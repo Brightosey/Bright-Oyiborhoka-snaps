@@ -1,6 +1,6 @@
 import "../filters/filters.scss";
 import Data from "../../Data/tags.json";
-import react, { useState } from "react";
+import React, { useState } from "react";
 
 function Filter() {
   const [isMousedOver, setMouseOver] = useState(false);

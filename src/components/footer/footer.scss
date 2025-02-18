@@ -3,16 +3,15 @@
 @use "../../styles/partials/global" as *;
 @use "../../styles/partials/mixin" as *;
 
-
 .footer {
   padding: 0rem 1rem;
 
   &__content {
-
     @include tablet {
       display: flex;
       justify-content: space-between;
-      align-items:baseline;
+      align-items: baseline;
+      padding-bottom: 140px;
     }
 
     @include desktop {
@@ -23,9 +22,8 @@
   }
 
   &__links {
-
     @include tablet {
-      display:flex;
+      display: flex;
       gap: 3.75rem;
       padding-right: 1.875rem;
     }
@@ -33,14 +31,17 @@
 
   &__link {
 
+    font-size: 14px;
+    line-height: 23px;
+    font-weight: 500;
+
     @include desktop {
       align-self: center;
     }
   }
 
   &__header {
-   padding-top: 5rem;
-   padding-bottom: 1.25rem;
+    padding-top: 3rem;
   }
 
   &__column {
@@ -58,7 +59,7 @@
     }
 
     @include desktop {
-      display:flex;
+      display: flex;
       margin-top: 1.875rem;
     }
   }
@@ -66,7 +67,6 @@
   &__social2 {
     display: flex;
     gap: 1.25rem;
-    padding: 1.25rem 0rem;
 
     @include desktop {
       display: none;
@@ -74,9 +74,10 @@
   }
 
   &__copyright {
-    font-size: .75rem;
-    margin-bottom: .9375rem;
-    color:$border-color ;
-    word-spacing: .4375rem;
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.9375rem;
+    color: $border-color;
+    word-spacing: 0.4375rem;
   }
 }

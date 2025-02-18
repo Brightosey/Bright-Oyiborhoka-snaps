@@ -4,33 +4,48 @@
 @use "../../styles/partials/mixin" as *;
 
 .main {
+  &__content {
+    padding: 1.5rem 1rem;
+  }
 
-    &__content {
-       padding: 1.875rem 1rem; 
+  &__header {
+    padding-bottom: 1rem;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 500;
+
+    @include tablet {
+      font-size: 15px;
+      padding-bottom: 1.5rem;
     }
 
-    &__header {
-      padding-bottom: 1.875rem;
-    }
-
-    &__description {
-      @include desktop {
-        max-width: 85%;
-      }
-    }
-
-    &__details {
-
-      @include tablet {
-        font-size: 2.375rem;
-        font-weight:100;
-        line-height: 3.125rem;
-      }
-
-      @include desktop {
-        font-size: 3.125rem;
-        line-height: 3.75rem;
-      }
-      
+    @include desktop {
+      padding:1.5rem 0px;
     }
   }
+
+  &__description {
+    @include desktop {
+      max-width: 85%;
+    }
+  }
+
+  &__details {
+    font-family: 'newsreader';
+    font-size: 25px;
+    line-height: 30px;
+    font-weight: 300;
+    text-align: left;
+
+    @include tablet {
+      font-size: 2.375rem;
+      font-weight: 100;
+      line-height: 3.75rem;
+    }
+
+    @include desktop {
+      font-size: 3.5rem;
+      line-height: 4.7rem;
+    }
+  }
+}

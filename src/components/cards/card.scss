@@ -9,14 +9,14 @@
   max-width: 100%;
   background-color: $alt-bg;
 
-
   @include tablet {
-    width: 48.5%;
+    width: 40%;
   }
 
   @include desktop {
     width: 32%;
   }
+
 
   &__image-container {
     position: relative;

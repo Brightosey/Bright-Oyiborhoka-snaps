@@ -1,0 +1,23 @@
+@use "../../styles/partials/font" as *;
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixin" as *;
+
+.photo-page {
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        padding: 30px 16px;
+    }
+
+    &__back-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        gap: 10px;
+        color:$primary-accent ;
+        font-size: 26px;
+    }
+}

@@ -1,0 +1,53 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/font" as *;
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/mixin" as *;
+
+.comment-form {
+  padding: 0px 16px;
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    margin-bottom: 8px;
+  }
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__input {
+    width: 100%;
+    min-height: 30px;
+    border: 2px solid $border-color;
+    border-radius: 10px;
+
+    &:active,
+    &:focus {
+      border: 2px solid $primary-accent;
+    }
+  }
+
+  &__textarea {
+    width: 100%;
+    min-height: 60px;
+    border: 2px solid $border-color;
+    border-radius: 10px;
+
+    &:active,
+    &:focus {
+      border: 2px solid $primary-accent;
+    }
+  }
+
+  &__button {
+    padding: 5px 15px;
+    background: $primary-accent;
+    color: $alt-text;
+    border-radius: 10px;
+    margin-left: 78.5%;
+  }
+}

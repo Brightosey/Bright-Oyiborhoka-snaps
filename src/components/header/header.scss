@@ -32,7 +32,7 @@
     font-weight: bold;
     cursor: pointer;
 
-    &:hover {
+    &:hover, &--active {
       background: $primary-accent;
       color: $primary-bg;
     }
@@ -44,6 +44,6 @@
   }
 
   &__icon {
-    color: $alt-text;
+    
   }
 }

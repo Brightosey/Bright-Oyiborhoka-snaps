@@ -1,0 +1,88 @@
+import React, { useState, useEffect } from "react";
+import { useParams, Link } from "react-router-dom";
+import axios from "axios";
+import Form from "../../components/form/form";
+import arrowIcon from "../../assets/Icons/Arrow.svg";
+import "../photosPage/photosPage.scss";
+
+function PhotosPage(props) {
+  const { id } = useParams(); // Extract ID from URL
+  const [photo, setPhoto] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchPhoto = async () => {
+      try {
+        const response = await axios.get(
+          `https://unit-3-project-c5faaab51857.herokuapp.com/photos/${id}?api_key=9ac4ae38-daeb-4699-b6f1-20a23867a652`
+        );
+        setPhoto(response.data);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching photo details:", error);
+        setError("Photo not found. Please check the ID.");
+        setLoading(false);
+      }
+    };
+
+    fetchPhoto();
+  }, [id]);
+
+  if (loading) return <p>Loading photo...</p>;
+  if (error) return <p>{error}</p>;
+
+  return (
+    <section className="photo-page">
+      <section className="photo-page__header">
+        <h1>Snaps</h1>
+        <Link to="/" className="photo-page__back-link">
+          <svg
+            width="21"
+            height="15"
+            viewBox="0 0 21 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0.292892 6.7929C-0.0976315 7.18342 -0.0976314 7.81658 0.292893 8.20711L6.65686 14.5711C7.04738 14.9616 7.68054 14.9616 8.07107 14.5711C8.46159 14.1805 8.46159 13.5474 8.07107 13.1569L2.41421 7.5L8.07107 1.84315C8.46159 1.45262 8.46159 0.819458 8.07107 0.428933C7.68054 0.038409 7.04738 0.038409 6.65685 0.428933L0.292892 6.7929ZM21 6.5L1 6.5L1 8.5L21 8.5L21 6.5Z"
+              fill="currentColor"
+            />
+          </svg>
+          Home
+        </Link>
+      </section>
+
+      <section className="photo-page__content">
+        <div className="photo-page__image-container">
+          <img src={props.photo} alt="image" className="photo-page__image" />
+        </div>
+
+        <div className="photo-page__tags">
+          {props.tags && props.tags.length > 0 ? (
+            props.tags.map((tag, index) => (
+              <span key={index} className="photo-page__tag">
+                #{tag}
+              </span>
+            ))
+          ) : (
+            <p>No tags available.</p>
+          )}
+        </div>
+
+        <p className="photo-page__likes"> {props.likes} Likes</p>
+
+        <p className="photo-page__title">
+          {props.photographer || "Unknown Photographer"}
+        </p>
+
+        <p className="photo-page__timestamp">
+          {new Date(photo.timestamp).toLocaleDateString()}
+        </p>
+      </section>
+      <Form />
+    </section>
+  );
+}
+
+export default PhotosPage;

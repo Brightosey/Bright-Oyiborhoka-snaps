@@ -4,20 +4,106 @@
 @use "../../styles/partials/mixin" as *;
 
 .photo-page {
+  padding: 0px 16px;
 
-    &__header {
-        display: flex;
-        justify-content: space-between;
-        padding: 30px 16px;
-    }
+  @include desktop {
+   margin-bottom: 30px;
+}
 
-    &__back-link {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
-        gap: 10px;
-        color:$primary-accent ;
-        font-size: 26px;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0px 25px 0px;
+  }
+
+  &__heading {
+    font-size: 32px;
+    font-weight: 400;
+  }
+
+  &__back-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    gap: 10px;
+    color: $primary-accent;
+    font-size: 20px;
+  }
+
+  &__content {
+    border: 0.0625rem solid #ccc;
+    border-radius: 0.625rem;
+    max-width: 100%;
+    background-color: $alt-bg;
+    margin-bottom: 30px;
+
+    @include desktop {
+        width: 70%;
+        margin: 0px auto 50px;
     }
+  }
+
+  &__image-container {
+  }
+
+  &__image {
+    border-radius: .625rem .625rem 0 0;
+  }
+
+  &__tags {
+    display: flex;
+    padding: 16px 0px 0px 16px;
+    font-size: 10px;
+    gap: 10px;
+
+    @include tablet {
+        font-size:14px;
+        gap: 30px;
+    }
+  }
+
+  &__tag {
+    background:$alt-text ;
+    padding: 5px 6px;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+
+    @include tablet {
+        padding: 5px 20px;
+       
+    }
+  }
+
+  &__details {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 16px 0px 16px;
+  }
+
+  &__likes {
+    font-size: 14px;
+  }
+
+  &__timestamp {
+    font-size: 14px;
+  }
+
+  &__title1 {
+    font-size: 12px;
+    padding: 0px 0px 8px 16px;
+    display: none;
+
+    @include tablet {
+        display: block;
+    }
+  }
+  &__title2 {
+    font-size: 12px;
+    padding: 0px 0px 8px 16px;
+
+    @include tablet {
+        display: none;
+    }
+  }
 }

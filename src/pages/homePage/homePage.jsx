@@ -60,7 +60,7 @@ function HomePage() {
           <Body />
           <section className="card__container">
             {filteredCards.map((item) => (
-              <Link to={`/photos/${item.id}`} key={item.id}> {/* Link each card to PhotosPage */}
+              <Link to={`/photos/${item.id}`} key={item.id} className="card__link"> {/* Link each card to PhotosPage */}
                 <Card
                   photo={item.photo}
                   photographer={item.photographer}

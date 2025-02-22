@@ -30,3 +30,16 @@
   padding: 1.25rem;
 
 }
+
+.card__link {
+  color:$primary-text;
+  text-decoration: none;
+
+  @include tablet {
+    width: 48.5%;
+  }
+
+  @include desktop {
+    width: 32%;
+  }
+}

@@ -2,6 +2,7 @@ import "../cards/card.scss";
 import { Link } from "react-router-dom"; // Import Link
 
 function Card(props) {
+  console.log(props);
   return (
     <section className="card">
       <section className="card__image-container">

@@ -47,7 +47,7 @@ function HomePage() {
       <section className="app__main">
         {showFilter && (
           <section className="app__filter">
-            <Filter handleFilteredPlace={handleFilteredPlace} />
+            <Filter handleFilteredPlace={handleFilteredPlace} selectedPlace={selectedPlace} />
           </section>
         )}
         <section className="app__content">

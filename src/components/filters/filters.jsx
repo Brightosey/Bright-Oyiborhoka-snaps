@@ -38,7 +38,7 @@ function Filter({ handleFilteredPlace, selectedPlace }) {
           {tags.map((item, index) => {
             return (
               <p
-                className={`filter__item ${
+                className={`filter__item  ${
                   selectedPlace === item ? "filter__item--active" : ""
                 }`}
                 key={index}

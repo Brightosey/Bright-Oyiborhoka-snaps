@@ -2,7 +2,6 @@ import HomePage from "./pages/homePage/homePage";
 import PhotosPage from "./pages/photosPage/photosPage";
 import Footer from "./components/footer/footer";
 import "./App.scss";
-import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {

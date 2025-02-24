@@ -1,13 +1,9 @@
 import "../cards/card.scss";
-import { Link } from "react-router-dom"; // Import Link
 
 function Card(props) {
-  console.log(props);
   return (
     <section className="card">
       <section className="card__image-container">
-        {/* Wrap image with Link to navigate to the PhotosPage */}
-        
           <img className="card__image" src={props.photo} alt="image" />
         <section className="card__info">
           <p className="card__photographer">{props.photographer}</p>

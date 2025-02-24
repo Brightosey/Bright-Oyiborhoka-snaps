@@ -1,5 +1,6 @@
 import "../header/header.scss";
 import React, { useState } from "react";
+import {Link} from "react-router-dom";
 
 function Header({ clickFilter, showFilter }) {
   const [isMousedOver, setMouseOver] = useState(false);
@@ -14,7 +15,9 @@ function Header({ clickFilter, showFilter }) {
 
   return (
     <section className="header">
+      <Link to="/" className="header__name-link">
       <h1 className="header__name">Snaps</h1>
+      </Link>
       <button
         className={`header__filter ${showFilter && "header__filter--active"}`}
         onMouseOver={handleMouseOver}
@@ -40,3 +43,6 @@ function Header({ clickFilter, showFilter }) {
 }
 
 export default Header;
+
+
+

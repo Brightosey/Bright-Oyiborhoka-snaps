@@ -19,6 +19,12 @@
     font-weight: 400;
   }
 
+  &__name-link {
+    text-decoration: none;
+    color: $primary-text;
+    cursor: pointer;
+  }
+
   &__filter {
     display: flex;
     justify-content: center;

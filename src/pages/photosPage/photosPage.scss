@@ -21,6 +21,12 @@
     font-weight: 400;
   }
 
+  &__heading-link {
+    text-decoration: none;
+    color: $primary-text;
+    cursor: pointer;
+  }
+
   &__back-link {
     display: flex;
     justify-content: center;
@@ -67,7 +73,7 @@
     background:$alt-text ;
     padding: 5px 6px;
     border: 1px solid $border-color;
-    border-radius: 5px;
+    border-radius: 8px;
 
     @include tablet {
         padding: 5px 20px;

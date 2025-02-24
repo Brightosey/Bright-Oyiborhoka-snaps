@@ -2,30 +2,28 @@ import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import Form from "../../components/form/form";
-import arrowIcon from "../../assets/Icons/Arrow.svg";
 import "../photosPage/photosPage.scss";
 
 function PhotosPage() {
-  const { id } = useParams(); // Extract ID from URL
+  const { id } = useParams(); 
   const [photo, setPhoto] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchPhoto = async () => {
-      try {
-        const response = await axios.get(
-          `https://unit-3-project-c5faaab51857.herokuapp.com/photos/${id}?api_key=9ac4ae38-daeb-4699-b6f1-20a23867a652`
-        );
-        setPhoto(response.data);
-        setLoading(false);
-      } catch (error) {
-        console.error("Error fetching photo details:", error);
-        setError("Photo not found. Please check the ID.");
-        setLoading(false);
-      }
-    };
+  const fetchPhoto = async () => {
+    try {
+      const response = await axios.get(
+        `https://unit-3-project-c5faaab51857.herokuapp.com/photos/${id}?api_key=9ac4ae38-daeb-4699-b6f1-20a23867a652`
+      );
+      setPhoto(response.data);
+      setLoading(false);
+    } catch (error) {
+      setError("Photo not found. Please check the ID.");
+      setLoading(false);
+    }
+  };
 
+  useEffect(() => {
     fetchPhoto();
   }, [id]);
 
@@ -35,7 +33,9 @@ function PhotosPage() {
   return (
     <section className="photo-page">
       <section className="photo-page__header">
-        <h1 className="photo-page__heading">Snaps</h1>
+        <Link to="/" className="photo-page__heading-link">
+          <h1 className="photo-page__heading">Snaps</h1>
+        </Link>
         <Link to="/" className="photo-page__back-link">
           <svg
             width="21"
@@ -73,7 +73,7 @@ function PhotosPage() {
           <p className="photo-page__likes">
             <svg
               width="15"
-              height="14"
+              height="10"
               viewBox="0 0 15 14"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"

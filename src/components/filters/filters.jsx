@@ -1,26 +1,26 @@
 import "../filters/filters.scss";
 import React, { useState, useEffect } from "react";
-import axios from "axios";  // Import axios
+import axios from "axios";
 
 function Filter({ handleFilteredPlace, selectedPlace }) {
-  const [tags, setTags] = useState([]);  // State to store the fetched tags
+  const [tags, setTags] = useState([]); 
   const [isMousedOver, setMouseOver] = useState(false);
 
-  // Fetch data from the API when the component mounts
-  useEffect(() => {
-    const loadTags = async () => {
-      try {
-        const response = await axios.get(
-          "https://unit-3-project-c5faaab51857.herokuapp.com/tags?api_key=9ac4ae38-daeb-4699-b6f1-20a23867a652"
-        );
-        setTags(response.data);  // Store the fetched data in the state
-      } catch (error) {
-        alert("Error fetching tags:", error);
-      }
-    };
+  
+  const loadTags = async () => {
+    try {
+      const response = await axios.get(
+        "https://unit-3-project-c5faaab51857.herokuapp.com/tags?api_key=9ac4ae38-daeb-4699-b6f1-20a23867a652"
+      );
+      setTags(response.data); 
+    } catch (error) {
+      alert("Error fetching tags:", error);
+    }
+  };
 
-    loadTags();  // Call the fetchTags function
-  }, []);  // Empty dependency array to run the effect once when the component mounts
+  useEffect(() => {
+    loadTags();
+  }, []);
 
   function handleMouseOver() {
     setMouseOver(true);
@@ -38,12 +38,13 @@ function Filter({ handleFilteredPlace, selectedPlace }) {
           {tags.map((item, index) => {
             return (
               <p
-                className={`filter__item ${selectedPlace === item ? "filter__item--active" : ""}`}
+                className={`filter__item ${
+                  selectedPlace === item ? "filter__item--active" : ""
+                }`}
                 key={index}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
                 onClick={() => handleFilteredPlace(item)}
-                isSelected={selectedPlace === item.name} // Check if the card is selected based on filter
               >
                 {item}
               </p>
@@ -56,5 +57,3 @@ function Filter({ handleFilteredPlace, selectedPlace }) {
 }
 
 export default Filter;
-
-

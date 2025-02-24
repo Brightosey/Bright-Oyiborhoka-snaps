@@ -5,39 +5,33 @@ import Body from "../../components/body/body";
 import Card from "../../components/cards/card";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom"; // Import Link for navigation
+import { Link } from "react-router-dom";
 
 function HomePage() {
   const [selectedPlace, setSelectedPlace] = useState("");
   const [showFilter, setShowFilter] = useState(false);
-  const [photos, setPhotos] = useState([]); // State to store the fetched photos
+  const [photos, setPhotos] = useState([]); 
 
   function clickFilter() {
     setShowFilter((prev) => !prev);
   }
 
   function handleFilteredPlace(item) {
-    setSelectedPlace(item);
-    if (selectedPlace === item) {
-        handleFilteredPlace("");  // Clear selected filter
-      } else {
-        handleFilteredPlace(item);  // Set the selected filter
-      }
+        setSelectedPlace(selectedPlace === item ? "" : item);
   }
-
-  // Fetch data from the API when the component mounts
-  useEffect(() => {
+  
     const fetchPhotos = async () => {
       try {
         const response = await axios.get(
           "https://unit-3-project-c5faaab51857.herokuapp.com/photos?api_key=9ac4ae38-daeb-4699-b6f1-20a23867a652"
         );
-        setPhotos(response.data); // Store the fetched photos in the state
+        setPhotos(response.data); 
       } catch (error) {
         alert("Error fetching photos:", error);
       }
     };
-
+  
+  useEffect(() => {
     fetchPhotos();
   }, []);
 
@@ -60,7 +54,7 @@ function HomePage() {
           <Body />
           <section className="card__container">
             {filteredCards.map((item) => (
-              <Link to={`/photos/${item.id}`} key={item.id} className="card__link"> {/* Link each card to PhotosPage */}
+              <Link to={`/photos/${item.id}`} key={item.id} className="card__link"> 
                 <Card
                   photo={item.photo}
                   photographer={item.photographer}
@@ -76,4 +70,5 @@ function HomePage() {
 }
 
 export default HomePage;
+
 

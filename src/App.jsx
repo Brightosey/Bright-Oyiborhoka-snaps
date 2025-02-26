@@ -4,10 +4,9 @@ import Footer from "./components/footer/footer";
 import "./App.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
+
 function App() {
-
-  
-
   return (
     <>
       <BrowserRouter>

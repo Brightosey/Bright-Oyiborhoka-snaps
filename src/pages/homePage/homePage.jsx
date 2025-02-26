@@ -10,27 +10,28 @@ import { Link } from "react-router-dom";
 function HomePage() {
   const [selectedPlace, setSelectedPlace] = useState("");
   const [showFilter, setShowFilter] = useState(false);
-  const [photos, setPhotos] = useState([]); 
+  const [photos, setPhotos] = useState([]);
 
   function clickFilter() {
     setShowFilter((prev) => !prev);
   }
 
   function handleFilteredPlace(item) {
-        setSelectedPlace(selectedPlace === item ? "" : item);
+    setSelectedPlace(selectedPlace === item ? "" : item);
   }
   
-    const fetchPhotos = async () => {
-      try {
-        const response = await axios.get(
-          "https://unit-3-project-c5faaab51857.herokuapp.com/photos?api_key=9ac4ae38-daeb-4699-b6f1-20a23867a652"
-        );
-        setPhotos(response.data); 
-      } catch (error) {
-        alert("Error fetching photos:", error);
-      }
-    };
-  
+  const fetchPhotos = async () => {
+    try {
+      const response = await axios.get(
+        `${import.meta.env.VITE_BACKEND_URL}/photos`
+      );
+      console.log(response.data);
+      setPhotos(response.data);
+    } catch (error) {
+      alert("Error fetching photos:", error);
+    }
+  };
+
   useEffect(() => {
     fetchPhotos();
   }, []);
@@ -47,14 +48,21 @@ function HomePage() {
       <section className="app__main">
         {showFilter && (
           <section className="app__filter">
-            <Filter handleFilteredPlace={handleFilteredPlace} selectedPlace={selectedPlace} />
+            <Filter
+              handleFilteredPlace={handleFilteredPlace}
+              selectedPlace={selectedPlace}
+            />
           </section>
         )}
         <section className="app__content">
           <Body />
           <section className="card__container">
-            {filteredCards.map((item) => (
-              <Link to={`/photos/${item.id}`} key={item.id} className="card__link"> 
+            {filteredCards?.map((item) => (
+              <Link
+                to={`/photos/${item.id}`}
+                key={item.id}
+                className="card__link"
+              >
                 <Card
                   photo={item.photo}
                   photographer={item.photographer}
@@ -70,5 +78,3 @@ function HomePage() {
 }
 
 export default HomePage;
-
-

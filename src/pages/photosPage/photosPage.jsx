@@ -13,7 +13,7 @@ function PhotosPage() {
   const fetchPhoto = async () => {
     try {
       const response = await axios.get(
-        `https://unit-3-project-c5faaab51857.herokuapp.com/photos/${id}?api_key=9ac4ae38-daeb-4699-b6f1-20a23867a652`
+        `${import.meta.env.VITE_BACKEND_URL}/photos/${id}`
       );
       setPhoto(response.data);
       setLoading(false);
@@ -54,11 +54,11 @@ function PhotosPage() {
       </section>
 
       <section className="photo-page__content">
-        <div className="photo-page__image-container">
+        <article className="photo-page__image-container">
           <img src={photo.photo} alt="image" className="photo-page__image" />
-        </div>
+        </article>
 
-        <div className="photo-page__tags">
+        <article className="photo-page__tags">
           {photo.tags && photo.tags.length > 0 ? (
             photo.tags.map((tag, index) => (
               <span key={index} className="photo-page__tag">
@@ -68,8 +68,8 @@ function PhotosPage() {
           ) : (
             <p>No tags available.</p>
           )}
-        </div>
-        <div className="photo-page__details">
+        </article>
+        <article className="photo-page__details">
           <p className="photo-page__likes">
             <svg
               width="15"
@@ -93,7 +93,7 @@ function PhotosPage() {
           <p className="photo-page__timestamp">
             {new Date(photo.timestamp).toLocaleDateString()}
           </p>
-        </div>
+        </article>
 
         <p className="photo-page__title2">
           Photo by {photo.photographer || "Unknown Photographer"}

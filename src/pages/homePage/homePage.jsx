@@ -19,20 +19,19 @@ function HomePage() {
   function handleFilteredPlace(item) {
     setSelectedPlace(selectedPlace === item ? "" : item);
   }
-  
-  const fetchPhotos = async () => {
-    try {
-      const response = await axios.get(
-        `${import.meta.env.VITE_BACKEND_URL}/photos`
-      );
-      console.log(response.data);
-      setPhotos(response.data);
-    } catch (error) {
-      alert("Error fetching photos:", error);
-    }
-  };
 
   useEffect(() => {
+    const fetchPhotos = async () => {
+      try {
+        const response = await axios.get(
+          `${import.meta.env.VITE_BACKEND_URL}/photos`
+        );
+        console.log(response.data);
+        setPhotos(response.data);
+      } catch (error) {
+        alert("Error fetching photos:", error);
+      }
+    };
     fetchPhotos();
   }, []);
 
@@ -42,9 +41,9 @@ function HomePage() {
 
   return (
     <>
-      <div>
+      <article>
         <Header clickFilter={clickFilter} showFilter={showFilter} />
-      </div>
+      </article>
       <section className="app__main">
         {showFilter && (
           <section className="app__filter">

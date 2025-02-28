@@ -14,7 +14,7 @@ function Form() {
   const loadComment = async () => {
     try {
       const response = await axios.get(
-        `https://unit-3-project-c5faaab51857.herokuapp.com/photos/${id}/comments?api_key=9ac4ae38-daeb-4699-b6f1-20a23867a652`
+        /* `https://unit-3-project-c5faaab51857.herokuapp.com/photos/${id}/comments?api_key=9ac4ae38-daeb-4699-b6f1-20a23867a652` */ `${import.meta.env.VITE_BACKEND_URL}/photos/${id}/comments`
       );
       const sortedComments = response.data.sort((a, b) => b.timestamp - a.timestamp);
       setFetchedComments(sortedComments);
@@ -51,7 +51,7 @@ function Form() {
   const postComment = async (newCommentContent) => {
     try {
       await axios.post(
-        `https://unit-3-project-c5faaab51857.herokuapp.com/photos/${id}/comments?api_key=9ac4ae38-daeb-4699-b6f1-20a23867a652`,
+        `${import.meta.env.VITE_BACKEND_URL}/photos/${id}/comments`,
         newCommentContent
       );
       loadComment(); 
@@ -81,58 +81,56 @@ function Form() {
   return (
     <>
       <form className="comment-form" onSubmit={handleSubmit}>
-        <div className="comment-form__group">
-          <label className="comment-form__label">
-            Name
-            <input
-              className="comment-form__input"
-              type="text"
-              name="name"
-              value={name}
-              onChange={handleChangeName}
-            />
-          </label>
-        </div>
-        <div className="comment-form__group">
-          <label className="comment-form__label">
-            Comment
-            <textarea
-              className="comment-form__textarea"
-              name="comment"
-              value={comments}
-              onChange={handleChangeComment}
-            ></textarea>
-          </label>
-        </div>
-        <div className="comment-form__button-container" onClick={increase}>
-          <button className="comment-form__button" type="submit">
-            Submit
-          </button>
-        </div>
-      </form>
+  <article className="comment-form__group">
+    <label className="comment-form__label">
+      Name
+      <input
+        className="comment-form__input"
+        type="text"
+        name="name"
+        value={name}
+        onChange={handleChangeName}
+      />
+    </label>
+  </article>
+  <article className="comment-form__group">
+    <label className="comment-form__label">
+      Comment
+      <textarea
+        className="comment-form__textarea"
+        name="comment"
+        value={comments}
+        onChange={handleChangeComment}
+      ></textarea>
+    </label>
+  </article>
+  <article className="comment-form__button-container" onClick={increase}>
+    <button className="comment-form__button" type="submit">
+      Submit
+    </button>
+  </article>
+</form>
 
-      <section className="comments">
-        <h3 className="comments__title">{fetchedComments.length} Comments</h3>
-        {fetchedComments.length > 0 ? (
-          <ul className="comments__list">
-            {fetchedComments.map((comment) => (
-              <li key={comment.id} className="comments__item">
-                <div className="comments__meta">
-                  <p className="comments__author">{comment.name}</p>
-                  <p className="comments__date">
-                    {new Date(comment.timestamp).toLocaleDateString()}
-                  </p>
-                </div>
-                <p className="comments__text">{comment.comment}</p>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p className="comments__empty">
-            No comments yet. Be the first to comment!
-          </p>
-        )}
-      </section>
+<section className="comments">
+  <h3 className="comments__title">{fetchedComments.length} Comments</h3>
+  {fetchedComments.length > 0 ? (
+    <ul className="comments__list">
+      {fetchedComments.map((comment) => (
+        <li key={comment.id} className="comments__item">
+          <article className="comments__meta">
+            <p className="comments__author">{comment.name}</p>
+            <p className="comments__date">
+              {new Date(comment.timestamp).toLocaleDateString()}
+            </p>
+          </article>
+          <p className="comments__text">{comment.comment}</p>
+        </li>
+      ))}
+    </ul>
+  ) : (
+    <p className="comments__empty">No comments yet. Be the first to comment!</p>
+  )}
+</section>
     </>
   );
 }

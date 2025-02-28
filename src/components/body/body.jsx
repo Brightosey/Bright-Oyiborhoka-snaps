@@ -4,7 +4,7 @@ import "./body.scss";
 function Body() {
   return (
     <section className="main">
-      <div className="main__content">
+      <article className="main__content">
         <p className="main__header">Our mission:</p>
         <section className="main__description">
           <p className="main__details">
@@ -13,7 +13,7 @@ function Body() {
             <i className="main__emphasis"> expressed in their unique style.</i>
           </p>
         </section>
-      </div>
+      </article>
     </section>
   );
 }

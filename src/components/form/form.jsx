@@ -14,7 +14,7 @@ function Form() {
   const loadComment = async () => {
     try {
       const response = await axios.get(
-        /* `https://unit-3-project-c5faaab51857.herokuapp.com/photos/${id}/comments?api_key=9ac4ae38-daeb-4699-b6f1-20a23867a652` */ `${import.meta.env.VITE_BACKEND_URL}/photos/${id}/comments`
+        `${import.meta.env.VITE_BACKEND_URL}/photos/${id}/comments`
       );
       const sortedComments = response.data.sort((a, b) => b.timestamp - a.timestamp);
       setFetchedComments(sortedComments);

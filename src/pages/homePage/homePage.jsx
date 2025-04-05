@@ -1,4 +1,4 @@
-import "../homePage/homepage.scss";
+import "../homePage/homePage.scss";
 import Header from "../../components/header/header";
 import Filter from "../../components/filters/filters";
 import Body from "../../components/body/body";

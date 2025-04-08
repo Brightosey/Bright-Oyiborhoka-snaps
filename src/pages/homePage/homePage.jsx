@@ -13,7 +13,7 @@ function HomePage() {
   const [selectedPlace, setSelectedPlace] = useState("");
   const [showFilter, setShowFilter] = useState(false);
   const [photos, setPhotos] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   function clickFilter() {
     setShowFilter((prev) => !prev);
@@ -34,7 +34,7 @@ function HomePage() {
       } catch (error) {
         alert("Error fetching photos:", error);
       } finally {
-        setLoading(true);
+        setLoading(false);
       }
     };
     fetchPhotos();

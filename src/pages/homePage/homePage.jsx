@@ -13,6 +13,7 @@ function HomePage() {
   const [selectedPlace, setSelectedPlace] = useState("");
   const [showFilter, setShowFilter] = useState(false);
   const [photos, setPhotos] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   function clickFilter() {
     setShowFilter((prev) => !prev);
@@ -32,10 +33,16 @@ function HomePage() {
         setPhotos(response.data);
       } catch (error) {
         alert("Error fetching photos:", error);
+      } finally {
+        setLoading(true);
       }
     };
     fetchPhotos();
   }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   const filteredCards = selectedPlace
     ? photos.filter((item) => item.tags.includes(selectedPlace))

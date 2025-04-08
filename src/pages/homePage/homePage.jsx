@@ -7,6 +7,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
+
 function HomePage() {
   const [selectedPlace, setSelectedPlace] = useState("");
   const [showFilter, setShowFilter] = useState(false);
@@ -24,7 +26,7 @@ function HomePage() {
     const fetchPhotos = async () => {
       try {
         const response = await axios.get(
-          `${import.meta.env.VITE_BACKEND_URL}/photos`
+          `${backendUrl}/photos`
         );
         console.log(response.data);
         setPhotos(response.data);
@@ -63,7 +65,7 @@ function HomePage() {
                 className="card__link"
               >
                 <Card
-                  photo={item.photo}
+                  photo={backendUrl+item.photo}
                   photographer={item.photographer}
                   tags={item.tags}
                 />

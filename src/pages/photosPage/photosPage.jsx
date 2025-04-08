@@ -4,6 +4,8 @@ import axios from "axios";
 import Form from "../../components/form/form";
 import "../photosPage/photosPage.scss";
 
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
+
 function PhotosPage() {
   const { id } = useParams(); 
   const [photo, setPhoto] = useState(null);
@@ -13,7 +15,7 @@ function PhotosPage() {
   const fetchPhoto = async () => {
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_BACKEND_URL}/photos/${id}`
+        `${backendUrl}/photos/${id}`
       );
       setPhoto(response.data);
       setLoading(false);
@@ -55,7 +57,7 @@ function PhotosPage() {
 
       <section className="photo-page__content">
         <article className="photo-page__image-container">
-          <img src={photo.photo} alt="image" className="photo-page__image" />
+          <img src={backendUrl+photo.photo} alt="image" className="photo-page__image" />
         </article>
 
         <article className="photo-page__tags">

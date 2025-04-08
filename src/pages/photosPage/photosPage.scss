@@ -7,8 +7,8 @@
   padding: 0px 16px;
 
   @include desktop {
-   margin-bottom: 30px;
-}
+    margin-bottom: 30px;
+  }
 
   &__header {
     display: flex;
@@ -45,16 +45,13 @@
     margin-bottom: 30px;
 
     @include desktop {
-        width: 70%;
-        margin: 0px auto 50px;
+      width: 70%;
+      margin: 0px auto 50px;
     }
   }
 
-  &__image-container {
-  }
-
   &__image {
-    border-radius: .625rem .625rem 0 0;
+    border-radius: 0.625rem 0.625rem 0 0;
   }
 
   &__tags {
@@ -64,20 +61,19 @@
     gap: 10px;
 
     @include tablet {
-        font-size:14px;
-        gap: 30px;
+      font-size: 14px;
+      gap: 30px;
     }
   }
 
   &__tag {
-    background:$alt-text ;
+    background: $alt-text;
     padding: 5px 6px;
     border: 1px solid $border-color;
     border-radius: 8px;
 
     @include tablet {
-        padding: 5px 20px;
-       
+      padding: 5px 20px;
     }
   }
 
@@ -101,7 +97,7 @@
     display: none;
 
     @include tablet {
-        display: block;
+      display: block;
     }
   }
   &__title2 {
@@ -109,7 +105,7 @@
     padding: 0px 0px 8px 16px;
 
     @include tablet {
-        display: none;
+      display: none;
     }
   }
 }

@@ -41,7 +41,7 @@ function HomePage() {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div>Fetching data…</div>;
   }
 
   const filteredCards = selectedPlace
